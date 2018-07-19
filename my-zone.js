@@ -4,6 +4,7 @@ function DataZone(el, type) {
   this.state = {
     collectedBlobs: []
   };
+  var self = this;
 
   this.setState = function(state) {
     // Merge the new state on top of the previous one and re-render everything.
@@ -12,24 +13,20 @@ function DataZone(el, type) {
   }
 
   const render = function() {
-    const { collectedBlobs } = this.state;
-    console.log(collectedBlobs);
-    const list = this.containerEl.querySelector("ul");
+    const { collectedBlobs } = self.state;
+    const list = self.containerEl.querySelector("ul");
+    console.log('in render', collectedBlobs);
     collectedBlobs.forEach((item) => {
-      console.log(item);
       const li = document.createElement("li");
-      if (this.type === 'image') {
+      if (self.type === 'img') {
         const img = document.createElement("img");
-        li.setAttribute("id", item.uuid);
         img.setAttribute("src", item.blobUrl);
         li.appendChild(img);
       }
-      else if (this.type === 'text') {
+      else if (self.type === 'text') {
         li.textContent = item;
-        console.log('list item', li);
       }
       list.appendChild(li);
-      console.log(list);
     });
   }
 }
@@ -41,8 +38,6 @@ async function fetchBlobFromUrl(fetchUrl) {
   return {
     blob,
     blobUrl: URL.createObjectURL(blob),
-    fetchUrl,
-    uuid: uuidv4(),
   };
 }
 
@@ -54,8 +49,8 @@ browser.runtime.onMessage.addListener(async (msg) => {
     let collectedBlobs = imgZone.state.collectedBlobs || [];
     const fetchRes = await fetchBlobFromUrl(msg.data);
     collectedBlobs.push(fetchRes);
-    console.log('in here');
     imgZone.setState({collectedBlobs});
+    console.log('recieved', collectedBlobs);
     return true;
   }
   else if (msg.type === 'new-text') {
