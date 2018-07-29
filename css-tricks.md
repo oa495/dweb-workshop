@@ -64,7 +64,7 @@ Add a border ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 `border: 2px solid #73AD21;`
 
 -----------
-Add rounded corners![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 
+Add rounded corners ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 
 `border-radius: 25px;`
 
 -----------
