@@ -32,7 +32,7 @@ Make all the text lowercase ![#1589F0](https://placehold.it/15/1589F0/000000?tex
 `text-transform: lowercase;`
 
 -----------
-Make all the text uppercase![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 
+Make all the text uppercase ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 
 `text-transform: uppercase;`
 
 -----------
