@@ -2,20 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="my-zone.css">
   </head>
 <body>
   <h1>This is my zone.</h1>
-  <p> I keep all my data here because I own it. </p>
+  <p> I keep all my data here because I own it.</p>
   <div id="app">
     <section id="img-zone">
       <h3>Collected images</h3>
       <ul></ul>
+      <button class="save-collection">save meeee</button>
     </section>
     <section id="text-zone">
       <h3>Collected text</h3>
       <ul></ul>
+      <button class="save-collection">save meeee</button>
     </section>
   </div>
 </body>
+<script src="deps/idb-file-storage.js"></script>
+<script src="utils/store.js"></script>
+<script src="data-zone.js"></script>
 <script src="my-zone.js"></script>
 </html>

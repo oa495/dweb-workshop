@@ -1,0 +1,21 @@
+body {
+    font-family: Helvetica;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section {
+  width: 50%;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 400px;
+}

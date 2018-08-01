@@ -2,6 +2,7 @@
 Open a new tab, and load "my-page.html" into it.
 */
 function openMyPage() {
+  console.log("injecting");
    browser.tabs.create({
      "url": "/my-zone.html"
    });
@@ -38,7 +39,7 @@ browser.contextMenus.onClicked.addListener(async (info) => {
   }
   catch (error) {
     if (error.message.includes("Could not establish connection. Receiving end does not exist.")) {
-      openMyPage();
+      openMyPage()
     }
   }
 });
