@@ -2,7 +2,6 @@
 Open a new tab, and load "my-page.html" into it.
 */
 function openMyPage() {
-  console.log("injecting");
    browser.tabs.create({
      "url": "/my-zone.html"
    });
@@ -35,6 +34,11 @@ browser.contextMenus.onClicked.addListener(async (info) => {
     await browser.runtime.sendMessage({
       type: type,
       data: data
+    });
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, 'remove', function(response) {
+        console.log('byeee');
+      });
     });
   }
   catch (error) {

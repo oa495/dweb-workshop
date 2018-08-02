@@ -18,5 +18,11 @@
       "48": "icons/icon.png"
     },
     "default_title": "Collected Data"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitter.com/*", "*://*.facebook.com/*"],
+      "js": ["content-script.js"]
+    }
+  ]
 }
