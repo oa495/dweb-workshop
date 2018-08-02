@@ -37,10 +37,5 @@ function DataZone(el, type) {
   this.save = function() {
     const { collected } = self.state;
     saveCollectedBlobs(self.type, collected)
-      .then(() => {
-        self.setState({
-          collected: [],
-        });
-      })
   }
 }
