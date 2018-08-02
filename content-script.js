@@ -1,5 +1,4 @@
-//content script
-var clickedEl = null;
+var clickedEl;
 
 document.addEventListener('mousedown', function(event){
   // Get the element tha was right clicked on.
