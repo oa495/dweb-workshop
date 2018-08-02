@@ -1,5 +1,5 @@
 body {
-    font-family: Helvetica;
+    font-family: monospace;
 }
 
 #app {
@@ -16,6 +16,23 @@ ul {
   list-style: none;
 }
 
+li {
+  padding: 1em;
+  margin: 1em;
+}
+
 img {
-  max-width: 400px;
+  max-width: 200px;
+  filter: drop-shadow(16px 16px 20px red) invert(75%);
+}
+
+.text-list li {
+  max-width: 300px;
+  border: 1px dashed pink;
+  border-radius: 5px;
+}
+
+#img-zone ul {
+  display: flex;
+  flex-wrap: wrap;
 }
