@@ -2,11 +2,10 @@
 var clickedEl = null;
 
 document.addEventListener('mousedown', function(event){
-    // Get the element tha was right clicked on.
-    if(event.button == 2) {
-        clickedEl = event.target;
-
-    }
+  // Get the element tha was right clicked on.
+  if (event.button == 2) {
+      clickedEl = event.target;
+  }
 }, true);
 
 
