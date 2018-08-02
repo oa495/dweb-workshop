@@ -15,9 +15,11 @@ function DataZone(el, type) {
   }
 
   const render = function() {
-    console.log('in render');
     const { collected } = self.state;
     const list = self.containerEl.querySelector("ul");
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
     collected.forEach((item) => {
       const li = document.createElement("li");
       if (self.type === 'img') {
